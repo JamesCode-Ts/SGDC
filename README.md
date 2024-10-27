@@ -1,7 +1,7 @@
 
 ## Análise e Classificação de Doença Cardíaca
 
-Este documento descreve um projeto que utiliza aprendizado de máquina para classificar a presença de doenças cardíacas com base em um conjunto de dados.
+Este documento descreve um projeto que utiliza aprendizado de máquina Stochastic Gradient Descent Classifier para classificar a presença de doenças cardíacas com base em um conjunto de dados.
 
 #### Importando Bibliotecas
 
