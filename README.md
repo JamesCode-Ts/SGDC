@@ -206,3 +206,27 @@ Mostra a relação entre níveis de colesterol e idade em relação ao diagnóst
 ### Conclusão
 
 Este projeto ilustra o uso de aprendizado de máquina para classificar a presença de doenças cardíacas com base em um conjunto de dados e fornece visualizações para melhor compreensão dos resultados.
+
+
+### Usage
+
+### Versão do Python:
+- **Python**: 3.10.12
+
+### Bibliotecas e suas Versões:
+- **Pandas** (para manipulação de dados):
+  - Versão: 1.3.5
+  
+- **NumPy** (para cálculos matemáticos e manipulação de arrays):
+  - Versão: 1.21.4
+  
+- **Scikit-learn** (para construção e avaliação de modelos de machine learning):
+  - Versão: 1.0.2
+  - Utilizado para Stochastic Gradient Descent Classifier e métricas como precisão, matriz de confusão, etc.
+  
+- **Matplotlib** (para criação de gráficos):
+  - Versão: 3.5.0
+  
+- **Seaborn** (para visualização de dados):
+  - Versão: 0.11.2
+
