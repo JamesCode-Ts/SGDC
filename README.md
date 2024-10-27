@@ -141,6 +141,8 @@ Calcula a Curva ROC e a AUC, que medem a capacidade de discriminação do modelo
 
 #### Distribuição de Idade por Diagnóstico
 
+![g1](https://github.com/user-attachments/assets/d7641093-cded-43d9-a453-13b3d45ad997)
+
 ```python
 plt.figure(figsize=(8, 6))
 sns.histplot(data=df, x='age', hue='num', multiple='stack', bins=20, palette='Set1')
@@ -154,6 +156,8 @@ Mostra a distribuição de idade para pacientes com e sem doença cardíaca.
 
 #### Matriz de Confusão
 
+![g2](https://github.com/user-attachments/assets/62c129d8-05cd-4e1e-94ef-f523689bf238)
+
 ```python
 plt.figure(figsize=(6, 4))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', cbar=False)
@@ -166,6 +170,8 @@ plt.show()
 Visualiza a matriz de confusão com um mapa de calor.
 
 #### Curva ROC
+
+![g3](https://github.com/user-attachments/assets/d6c478d1-d50d-4309-abc4-db9c39bd5c47)
 
 ```python
 plt.figure(figsize=(8, 6))
@@ -183,6 +189,8 @@ plt.show()
 Exibe a Curva ROC para avaliar o desempenho do modelo.
 
 #### Relação entre Nível de Colesterol e Doença Cardíaca
+
+![g4](https://github.com/user-attachments/assets/b4de819f-d48f-4d36-a86e-a632f9bb5943)
 
 ```python
 plt.figure(figsize=(8, 6))
