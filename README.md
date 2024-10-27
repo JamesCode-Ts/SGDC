@@ -210,10 +210,10 @@ Este projeto ilustra o uso de aprendizado de máquina para classificar a presen�
 
 ### Usage
 
-### Versão do Python:
+#### Versão do Python:
 - **Python**: 3.10.12
 
-### Bibliotecas e suas Versões:
+#### Bibliotecas e suas Versões:
 - **Pandas** (para manipulação de dados):
   - Versão: 1.3.5
   
