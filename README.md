@@ -3,7 +3,7 @@
 
 Este documento descreve um projeto que utiliza aprendizado de máquina para classificar a presença de doenças cardíacas com base em um conjunto de dados.
 
-## Importando Bibliotecas
+### Importando Bibliotecas
 
 ```python
 import pandas as pd
@@ -18,7 +18,7 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 
 Esse bloco importa as bibliotecas necessárias para manipulação de dados (pandas), cálculos matemáticos (numpy), visualização (matplotlib e seaborn) e criação do modelo de classificação (scikit-learn).
 
-## Carregando o Dataset Heart Disease
+### Carregando o Dataset Heart Disease
 
 ```python
 url = "https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data"
@@ -28,7 +28,7 @@ df = pd.read_csv(url, names=columns)
 
 Aqui, o código carrega o conjunto de dados de doenças cardíacas e define os nomes das colunas para facilitar o uso.
 
-## Tratamento de Dados Faltantes
+### Tratamento de Dados Faltantes
 
 ```python
 df = df.replace("?", pd.NA).dropna()
@@ -36,7 +36,7 @@ df = df.replace("?", pd.NA).dropna()
 
 Os valores "?" são substituídos por NaN (indicando valores ausentes), e as linhas com valores faltantes são removidas para limpar os dados.
 
-## Conversão de Tipos de Dados
+### Conversão de Tipos de Dados
 
 ```python
 df = df.astype(float)
@@ -44,7 +44,7 @@ df = df.astype(float)
 
 Converte todas as colunas para o tipo float, facilitando o processamento numérico.
 
-## Criando uma Variável Binária para Diagnóstico
+### Criando uma Variável Binária para Diagnóstico
 
 ```python
 df['num'] = (df['num'] > 0).astype(int)
@@ -52,7 +52,7 @@ df['num'] = (df['num'] > 0).astype(int)
 
 A coluna `num` é transformada em uma variável binária, onde 1 indica a presença de doença cardíaca e 0 indica ausência.
 
-## Dividindo as Features e o Alvo
+### Dividindo as Features e o Alvo
 
 ```python
 X = df.iloc[:, :-1].values
@@ -61,7 +61,7 @@ y = df.iloc[:, -1].values
 
 Aqui, o conjunto de dados é dividido entre features (`X`) e o alvo (`y`), sendo `y` o diagnóstico.
 
-## Dividindo o Dataset em Treinamento e Teste
+### Dividindo o Dataset em Treinamento e Teste
 
 ```python
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
@@ -69,7 +69,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 
 O conjunto de dados é dividido entre treino e teste, com 70% dos dados para treino e 30% para teste.
 
-## Padronizando os Dados
+### Padronizando os Dados
 
 ```python
 scaler = StandardScaler()
@@ -79,7 +79,7 @@ X_test = scaler.transform(X_test)
 
 Os dados são padronizados para melhorar a performance do modelo.
 
-## Inicializando e Treinando o SGDClassifier
+### Inicializando e Treinando o SGDClassifier
 
 ```python
 sgd = SGDClassifier(max_iter=1000, tol=1e-3, random_state=42)
@@ -88,7 +88,7 @@ sgd.fit(X_train, y_train)
 
 Inicializa o classificador `SGDClassifier` e treina o modelo com o conjunto de treino.
 
-## Fazendo Previsões no Conjunto de Teste
+### Fazendo Previsões no Conjunto de Teste
 
 ```python
 y_pred = sgd.predict(X_test)
@@ -96,9 +96,9 @@ y_pred = sgd.predict(X_test)
 
 O modelo faz previsões no conjunto de teste.
 
-## Avaliação do Modelo
+### Avaliação do Modelo
 
-### Acurácia
+#### Acurácia
 
 ```python
 accuracy = accuracy_score(y_test, y_pred)
@@ -107,7 +107,7 @@ print(f"Acurácia: {accuracy * 100:.2f}%")
 
 Calcula a acurácia do modelo, que indica a porcentagem de previsões corretas.
 
-### Matriz de Confusão
+#### Matriz de Confusão
 
 ```python
 cm = confusion_matrix(y_test, y_pred)
@@ -117,7 +117,7 @@ print(cm)
 
 Gera a matriz de confusão, que mostra os acertos e erros em cada classe.
 
-### Relatório de Classificação
+#### Relatório de Classificação
 
 ```python
 print("\nRelatório de Classificação:")
@@ -126,7 +126,7 @@ print(classification_report(y_test, y_pred))
 
 Gera um relatório de classificação que inclui métricas como precisão, recall e F1-score para cada classe.
 
-### Curva ROC e AUC
+#### Curva ROC e AUC
 
 ```python
 y_pred_proba = sgd.decision_function(X_test)
@@ -137,9 +137,9 @@ print(f"\nAUC-ROC: {roc_auc:.2f}")
 
 Calcula a Curva ROC e a AUC, que medem a capacidade de discriminação do modelo.
 
-## Visualizações
+### Visualizações
 
-### Distribuição de Idade por Diagnóstico
+#### Distribuição de Idade por Diagnóstico
 
 ```python
 plt.figure(figsize=(8, 6))
@@ -152,7 +152,7 @@ plt.show()
 
 Mostra a distribuição de idade para pacientes com e sem doença cardíaca.
 
-### Matriz de Confusão
+#### Matriz de Confusão
 
 ```python
 plt.figure(figsize=(6, 4))
@@ -165,7 +165,7 @@ plt.show()
 
 Visualiza a matriz de confusão com um mapa de calor.
 
-### Curva ROC
+#### Curva ROC
 
 ```python
 plt.figure(figsize=(8, 6))
@@ -182,7 +182,7 @@ plt.show()
 
 Exibe a Curva ROC para avaliar o desempenho do modelo.
 
-### Relação entre Nível de Colesterol e Doença Cardíaca
+#### Relação entre Nível de Colesterol e Doença Cardíaca
 
 ```python
 plt.figure(figsize=(8, 6))
