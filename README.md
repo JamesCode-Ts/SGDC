@@ -123,6 +123,7 @@ Gera a matriz de confusão, que mostra os acertos e erros em cada classe.
 print("\nRelatório de Classificação:")
 print(classification_report(y_test, y_pred))
 ```
+https://github.com/JamesCode-Ts/SGDC/issues/2#issue-2659473199
 
 Gera um relatório de classificação que inclui métricas como precisão, recall e F1-score para cada classe.
 
