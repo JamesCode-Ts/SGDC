@@ -189,18 +189,6 @@ plt.show()
 
 Exibe a Curva ROC para avaliar o desempenho do modelo.
 
-#### Relação entre Nível de Colesterol e Doença Cardíaca
-
-![g4](https://github.com/user-attachments/assets/b4de819f-d48f-4d36-a86e-a632f9bb5943)
-
-```python
-plt.figure(figsize=(8, 6))
-sns.scatterplot(data=df, x='chol', y='age', hue='num', palette='Set1')
-plt.title('Relação entre Nível de Colesterol e Idade por Diagnóstico')
-plt.xlabel('Colesterol')
-plt.ylabel('Idade')
-plt.show()
-```
 
 Mostra a relação entre níveis de colesterol e idade em relação ao diagnóstico de doença cardíaca.
 
