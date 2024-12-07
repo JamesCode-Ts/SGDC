@@ -91,11 +91,5 @@ plt.title('Curva ROC')
 plt.legend(loc="lower right")
 plt.show()
 
-# 4. Relação entre Nível de Colesterol e Doença Cardíaca
-plt.figure(figsize=(8, 6))
-sns.scatterplot(data=df, x='chol', y='age', hue='num', palette='Set1')
-plt.title('Relação entre Nível de Colesterol e Idade por Diagnóstico')
-plt.xlabel('Colesterol')
-plt.ylabel('Idade')
-plt.show()
+
 
